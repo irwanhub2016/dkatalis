@@ -1,0 +1,56 @@
+AllCops:
+  Exclude:
+    - bin/**/*
+    - vendor/**/*
+    - tmp/**/*
+    - api-testing/Rakefile
+    - web/Rakefile
+    - web/features/lib/testrail.rb
+    - performance-testing/**/*
+  TargetRubyVersion: 2.5.1
+
+Metrics/LineLength:
+  Max: 300
+
+Metrics/AbcSize:
+  Max: 200
+
+Metrics/MethodLength:
+  CountComments: false
+  Max: 200
+
+Metrics/BlockLength:
+  Max: 300
+
+Metrics/ClassLength:
+  Max: 200
+
+Metrics/CyclomaticComplexity:
+  Max: 50
+
+Metrics/PerceivedComplexity:
+  Max: 50
+
+Style/Documentation:
+  Enabled: false
+  
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/GlobalVars:
+  Enabled: false
+
+Lint/RescueException:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Max: 300
+
+Metrics/BlockNesting:
+  Max: 5
+
+Security/Eval:
+  Enabled: false
+
+EvalWithLocation:
+  Enabled: false

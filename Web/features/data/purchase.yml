@@ -1,0 +1,11 @@
+success_credit_card_payment:
+    card_number: 4811 1111 1111 1114
+    expire_date: 12/24
+    cvv_number: 123
+    bank_otp: 112233
+
+failed_credit_card_payment:
+    card_number: 4811 1111 1111 1113
+    expire_date: 02/20
+    cvv_number: 123
+    bank_otp: 112233
