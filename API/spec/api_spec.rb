@@ -31,7 +31,7 @@ describe ApiBase do
 	 	end
 
 	 	p "Compare request user ID #{result_json_1['data']['id']} and #{result_json_2['data']['id']}: #{boolean}"
-	 	p "success run the first test scenario #{boolean}"
+	 	p "success run the second test scenario #{boolean}"
 	end
 
 	it "Test API with two JSON data for #{ENV['LOOP']} loop" do
@@ -49,7 +49,7 @@ describe ApiBase do
 		 	p "Compare request user ID #{result_json_1['data']['id']} and #{result_json_2['data']['id']}: #{boolean}"
 		end
 
-		p 'success run the second test scenario'
+		p 'success run the third test scenario'
 	end
 
 	it 'Test API with empty JSON data' do
@@ -57,7 +57,7 @@ describe ApiBase do
 		result_json_2 = []
 		expect { compare_json(result_json_1,result_json_2) }.to raise_error(TypeError)
 
-		p 'success run the third test scenario'
+		p 'success run the fourth test scenario'
 	end
 
 	it 'Test API with nil JSON data' do
@@ -65,6 +65,6 @@ describe ApiBase do
 		result_json_2 = ""
 		expect { compare_json(result_json_1,result_json_2) }.to raise_error(TypeError)
 
-		p 'success run the fourth test scenario'
+		p 'success run the fifth test scenario'
 	end
 end
