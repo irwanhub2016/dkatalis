@@ -15,12 +15,13 @@ describe ApiBase do
 		result_json_2 = ApiBase.send_api(@url_target, @request_method, rand(1...12).to_s)
 
 		if ApiBase.validate_id(result_json_1['data']['id'],result_json_2['data']['id'])
-	 		expect(compare_json(result_json_1,result_json_2)).to be true
+	 		expect(boolean=compare_json(result_json_1,result_json_2)).to be true
 	 	else
-	 		expect(compare_json(result_json_1,result_json_2)).to be false
+	 		expect(boolean=compare_json(result_json_1,result_json_2)).to be false
 	 	end
 
-	 	p 'success run the first test scenario'
+	 	p "Compare request user ID #{result_json_1['data']['id']} and #{result_json_2['data']['id']}: #{boolean}"
+	 	p "success run the first test scenario #{boolean}"
 	end
 
 	it "Test API with two JSON data for #{ENV['LOOP']} loop" do
@@ -30,12 +31,12 @@ describe ApiBase do
 			result_json_2 = ApiBase.send_api(@url_target, @request_method, rand(1...12).to_s)
 
 			if ApiBase.validate_id(result_json_1['data']['id'],result_json_2['data']['id'])
-		 		expect(compare_json(result_json_1,result_json_2)).to be true
+		 		expect(boolean=compare_json(result_json_1,result_json_2)).to be true
 		 	else
-		 		expect(compare_json(result_json_1,result_json_2)).to be false
+		 		expect(boolean=compare_json(result_json_1,result_json_2)).to be false
 		 	end
 
-		 	p "Compare request user ID #{result_json_1['data']['id']} and #{result_json_2['data']['id']}"
+		 	p "Compare request user ID #{result_json_1['data']['id']} and #{result_json_2['data']['id']}: #{boolean}"
 		end
 
 		p 'success run the second test scenario'
