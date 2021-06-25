@@ -43,8 +43,14 @@ When 'user able to purchase a pillow with {string}' do |status|
     page.driver.switch_to_frame(frames[0])
     final_payment_frames = page.find_all('iframe')
     page.driver.switch_to_frame(final_payment_frames[0])
-    sleep 2
-    custom_wait.until { page.has_css?('button.btn-sm.btn-success') }
+    retries = 1
+    begin
+      custom_wait.until { page.has_css?('button.btn-sm.btn-success') }
+    rescue Exception => e
+      p e.message
+      retry if (retries += 1) < 5
+      raise e.message if retries == 5
+    end
     page.find(:css, 'input#PaRes').set get_purchase_data["#{status}_credit_card_payment"]['bank_otp']
     page.find(:css, 'button.btn-sm.btn-success').click
     @page = page
