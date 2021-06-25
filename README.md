@@ -17,7 +17,7 @@ If you are linux(Ubuntu) please install brew first:
 Clone the repository and install all gems depedency:
 ```shell
 $ git clone https://github.com/irwanhub2016/dkatalis.git
-$ cd icebox/
+$ cd dkatalis
 $ gem install bundler
 $ bundle install
 ```
