@@ -93,4 +93,4 @@ Run spec: `bundle exec rspec`
 Run spec with documentation: `bundle exec rspec --format documentation`
 
 ### Notes
-This test use Rspec doing expectation and own library to compare two JSON responses ( [json_compare.rb](https://github.com/irwanhub2016/dkatalis/blob/main/API/lib/json_compare.rb) ).
+This test use Rspec doing expectation and own library to compare two JSON responses ( [json_compare.rb](https://github.com/irwanhub2016/dkatalis/blob/main/API/lib/json_comparison.rb) ).
