@@ -1,13 +1,17 @@
 # DKatalis :: This project there are 2 parts: Web and API
 
-### Requirement An Automation Testing Framework for Web
-* Assume you are using environment macOS or Linux . For this case i'm using macOS and Ruby 2.5.1
+###  ⏺ Requirement An Automation Testing Framework for Web
+* Assume you are using environment macOS. For this case i'm using macOS and Ruby 2.5.1
 * [Ruby](https://www.ruby-lang.org/en/) with version 2.5.0 or above. I recommend to use ruby version manager like [rvm](https://rvm.io/) to install the ruby. Follow the instructions below:
 * Install GNUPG `$ brew install gnupg`
 * Install Key `gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB`
 * Install RVM `$ \curl -sSL https://get.rvm.io | bash`
 * Install Ruby `$ rvm install 2.5.1`
 * Set use ruby 2.5.1 `$ rvm use 2.5.1`
+
+If you are linux(Ubuntu) please install brew first:
+* Install package `sudo apt-get install build-essential curl file git`
+* Install brew `sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"`
 
 ### Setup
 Clone the repository and install all gems depedency:
@@ -69,3 +73,22 @@ This test use capybara library to find an element and Rspec doing expectation.
 * There is only an issue from **firefox browser** when i run all scenarios at the same time want and when to switch from from second(child) level frame to main page step.
 * But if run scenario one by one `features/purchase.feature:11` then `features/purchase.feature:12` it does not matter
 * Related to mozilla bug _Browsing context has been discarded after "WebDriver:SwitchToFrame"_.  
+
+### ⏺ Requirement for API Test
+* Assume you are using environment macOS. For this case i'm using macOS and Ruby 2.5.1
+* Make sure Ruby has been installed by following the instructions above
+
+This framework contains spesific directory functions:
+```
+- root directory    => contains configuration files
+- lib               => main class, created library for compare JSON
+- spec              => code to write test
+```
+
+### Run Test
+Run spec: `bundle exec rspec`
+
+Run spec with documentation: `bundle exec rspec --format documentation`
+
+### Notes
+This test use Rspec doing expectation and own library to compare two JSON responses ( [json_compare.rb](https://github.com/irwanhub2016/dkatalis/blob/main/API/lib/json_compare.rb) ).
