@@ -20,7 +20,6 @@ $ git clone https://github.com/irwanhub2016/dkatalis.git
 $ cd icebox/
 $ gem install bundler
 $ bundle install
-$ cp .env.example .env
 ```
 Please make sure you have [chromedriver](https://sites.google.com/a/chromium.org/chromedriver/) installed on your system.
 
@@ -54,7 +53,8 @@ What are these 3 files?:
 
 
 ### Running Features Test
-* We can run test on optional browser. If you need to run using firefox change param, => BROWSER=firefox and for chrome => BROWSER=chrome in .env file
+* We can run test on optional browser using environment variable (.env)
+* If you need to run using spesific browser change value firefox => BROWSER=firefox and for chrome => BROWSER=chrome in .env file
 
 To see content .env jump to main directory dkatalis then `$ cat .env`
 
