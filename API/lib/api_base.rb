@@ -1,19 +1,14 @@
 require 'json'
-require 'pp'
 require 'byebug'
-require 'os'
-require 'imatcher'
-require 'chilkat'
-require 'active_support'
-require 'active_support/core_ext'
-require 'active_support/core_ext/hash/indifferent_access'
-require 'date'
-require 'require_all'
+require 'rspec/expectations'
 require 'resolv-replace'
 require 'open-uri'
 require 'net/http'
 require 'net/https'
 require 'uri'
+require 'dotenv'
+
+Dotenv.load
 
 class ApiBase
      def self.send_api(base_url, method, endpoint)

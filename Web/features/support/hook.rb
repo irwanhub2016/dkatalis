@@ -3,11 +3,9 @@ Before do |scenario|
   Capybara.default_max_wait_time = DEFAULT_TIMEOUT
   Capybara.javascript_driver = ENV['BROWSER'].to_sym
 
-  # @wait = Selenium::WebDriver::Wait.new(timeout: DEFAULT_TIMEOUT, interval: 1, ignore: Selenium::WebDriver::Error::NoSuchElementError)
   @driver = page.driver
   @app = InitializePages.new
-  # @tags = scenario.source_tag_names
-  # @count_step = 0
+
   if $feature_name.nil?
     $feature_name = scenario.feature.name
   elsif $feature_name != scenario.feature.name
@@ -18,6 +16,7 @@ Before do |scenario|
     Capybara.current_session.driver.browser.manage.delete_all_cookies
     @app.home.load
   end
+
   @scenario = scenario
   @scenario_name = scenario.name
   @step_list = []
@@ -26,11 +25,6 @@ Before do |scenario|
   p "Feature: #{$feature_name}"
   p "Scenario: #{@scenario_name}"
 end
-
-# AfterStep do
-#   @count_step += 1
-#   f@current_step = @step_list[@count_step]
-# end
 
 After do |scenario|
   if scenario.failed?
