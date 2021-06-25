@@ -58,6 +58,8 @@ What are these 3 files?:
 
 To see content .env jump to main directory dkatalis then `$ cat .env`
 
+Access directory for Web: `$ cd Web`
+
 Run all features: `$ cucumber`
 
 Run spesific test only: `$ cucumber features/purchase.feature:11` or `$ cucumber features/purchase.feature:12`
@@ -87,6 +89,8 @@ This framework contains spesific directory functions:
 
 ### Run Test
 * For the block test `Test API with two JSON data for #{ENV['LOOP']} loop` we can run test  with custom loop. Example update loop number in .env file => LOOP=1000 or you can set anything number except 0.
+
+Access directory for API: `$ cd API`
 
 Run spec: `bundle exec rspec`
 
