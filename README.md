@@ -54,7 +54,7 @@ What are these 3 files?:
 
 
 ### Running Features Test
-* We can run test on optional browser. If you need to run using firefox change param, => ENV['BROWSER'] = firefox and for chrome => ENV['BROWSER'] = chrome in .env file
+* We can run test on optional browser. If you need to run using firefox change param, => BROWSER=firefox and for chrome => BROWSER=chrome in .env file
 
 To see content .env jump to main directory dkatalis then `$ cat .env`
 
@@ -86,6 +86,8 @@ This framework contains spesific directory functions:
 ```
 
 ### Run Test
+* For the block test `Test API with two JSON data for #{ENV['LOOP']} loop` we can run test  with custom loop. Example update loop number in .env file => LOOP=1000 or you can set anything number except 0.
+
 Run spec: `bundle exec rspec`
 
 Run spec with documentation: `bundle exec rspec --format documentation`
